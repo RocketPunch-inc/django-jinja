@@ -2,7 +2,6 @@
 
 from django.views.generic import View
 from django.http import HttpResponse
-from django.shortcuts import render_to_response
 from django.template.loader import render_to_string
 
 from django_jinja.views.generic.detail import DetailView
@@ -22,7 +21,7 @@ class BasicTestView(View):
 
 class PipelineTestView(View):
     def get(self, request, data=None):
-        return render_to_response("pipeline_test.jinja", request=request)
+        return render(request, "pipeline_test.jinja")
 
 class ContextManipulationTestView(View):
     def get(self, request):
